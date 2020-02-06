@@ -16,7 +16,6 @@ class Home extends React.Component {
       "https://api.themoviedb.org/4/list/1?api_key=8c3a76b74e0de711e9eef20c4ddf6811"
     );
     this.setState({ results, isLoading: false });
-    console.log(results);
   };
 
   componentDidMount() {
