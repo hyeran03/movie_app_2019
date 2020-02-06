@@ -2,21 +2,26 @@ import React from "react";
 import PropTypes from "prop-types";
 import "./Movie.css";
 
-function Movies({ year, title, summary, poster, genres }) {
+function Movies({
+  id,
+  release_date,
+  title,
+  overview,
+  poster_path,
+  popularity
+}) {
   return (
     <div className="movie">
-      <img src={poster} alt={title} title={title} />
+      <img
+        src={"https://image.tmdb.org/t/p/w500" + poster_path}
+        alt={title}
+        title={title}
+      />
       <div className="movie__data">
         <h3 className="movie__title">{title}</h3>
-        <h5 className="movie__year">{year}</h5>
-        <ul className="movie__genres">
-          {genres.map((genre, index) => (
-            <li key={index} className="genres__genre">
-              {genre}
-            </li>
-          ))}
-        </ul>
-        <p className="movie__summary">{summary.slice(0, 180)}</p>
+        <h5 className="movie__year">{release_date}</h5>
+        <p className="movie__generes">{popularity}</p>
+        <p className="movie__summary">{overview.slice(0, 140)}</p>
       </div>
     </div>
   );
@@ -24,11 +29,11 @@ function Movies({ year, title, summary, poster, genres }) {
 
 Movies.propTypes = {
   id: PropTypes.number.isRequired,
-  year: PropTypes.number.isRequired,
+  release_date: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
-  summary: PropTypes.string.isRequired,
-  poster: PropTypes.string.isRequired,
-  genres: PropTypes.arrayOf(PropTypes.string).isRequired
+  overview: PropTypes.string.isRequired,
+  poster_path: PropTypes.string.isRequired,
+  popularity: PropTypes.number.isRequired
 };
 
 export default Movies;

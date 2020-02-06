@@ -34,8 +34,7 @@
   font-size: 24px;
   color: #2c2c2c;
 }
-
-.movie .movie__genres {
+/* .movie .movie__genres {
   list-style: none;
   padding: 0;
   margin: 0;
@@ -46,4 +45,4 @@
 .movie__genres li {
   margin-right: 10px;
   font-size: 14px;
-}
+} */
